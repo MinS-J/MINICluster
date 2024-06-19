@@ -167,7 +167,7 @@ transformedData_Inhibitory = dimReduction(Inhibitory_merge);
 
 %% 2D kmeans
 
-[K_2D_Excitatory, clusterIndices_2D_Excitatory] = Kmeans(transformedData_Excitatory, 2);
+%[K_2D_Excitatory, clusterIndices_2D_Excitatory] = Kmeans(transformedData_Excitatory, 2);
 
 [K_2D_Inhibitory, clusterIndices_2D_Inhibitory] = Kmeans(transformedData_Inhibitory, 2);
 
@@ -223,7 +223,7 @@ xlabel('x1');
 ylabel('x2');
 hold on;
 
-for i = find(cell2mat(h4)==1)
+for i = find(cell2mat(h1)==1)
     scatter(transformedData_Excitatory(clusterIndices_2D_Excitatory==i,1), transformedData_Excitatory(clusterIndices_2D_Excitatory==i,2), 'filled');
 end
 
@@ -234,7 +234,7 @@ xlabel('x1');
 ylabel('x2');
 hold on;
 
-for i = find(cell2mat(h6)==1)
+for i = find(cell2mat(h5)==1)
     scatter(transformedData_Inhibitory(clusterIndices_2D_Inhibitory==i,1), transformedData_Inhibitory(clusterIndices_2D_Inhibitory==i,2), 'filled');
 end
 
